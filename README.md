@@ -1,10 +1,10 @@
+
 # azure-samples
 ## Introduction
 This repository is to hold the small azure samples.
 
 ## AzureSampleConsoleApp1
 ### Sample for Chunk download from Web and upload into Blobs as chunks
-
  - `ChunkDownloadLargeFileAndUploadToBlob.cs` holds the sample describing how to download a resource as chunk and then upload them in Azure BLOB as chunks.
  
 #### Intro
@@ -21,4 +21,5 @@ Download large files from the Web resource and upload them into Azure BLOB stora
     1. Even though #2.1 and #2.2 looks straight forward, there might be issues because Read can read less number of bytes which in turn increases the number of blocks (more than 50000 limit) in the Azure BLOB storage.
     1. In order to avoid issue mentioned above in #2.3, we need to accumulate the resultant of  Stream.Read till it reaches the expected size (100MB in our case).
  1. Even though you fix the issues specified in #1 and #2 above, you might face exception stating An existing connection was forcibly closed by the remote host. . Though I'm not able to identify the solution for this, have found workaround using the articles here and here. Use Http1.0 instead of Http1.1.
+
 Code sample can be found [here](/AzureSamples/AzureSampleConsoleApp1/ChunkDownloadLargeFileAndUploadToBlob.cs).
